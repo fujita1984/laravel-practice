@@ -1,0 +1,2 @@
+# laravel-practice
+laravelとgptのapiを利用してアプリケーションを作成する練習
