@@ -1,2 +1,2 @@
 laravelの勉強用<br>
-gptのapiを使用したアプリ作成
+gptのapiを利用したアプリ作成
