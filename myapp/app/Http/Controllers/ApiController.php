@@ -9,6 +9,8 @@ class ApiController extends Controller
     public function gpt(Request $request)
     {
         $request_message = $request->input('request');
+        $allMessage = json_decode($request_message, true);
+
         $API_KEY = config('sample.GPT_API_KEY');
 
         $header = array(
@@ -17,17 +19,7 @@ class ApiController extends Controller
         );
 
         $params = json_encode(array(
-            'messages' => [
-                [
-                    'role' => 'system',
-                    'content' => '日本語'
-                ],
-                [
-                    "role" => 'user',
-                    "content" => $request_message
-                ]
-            ],
-
+            'messages' => $allMessage,
             'model' => 'gpt-3.5-turbo',
             'temperature'    => 0.2,
             'max_tokens'    => 500,
